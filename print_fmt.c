@@ -88,7 +88,7 @@ int _print_spec(char format, va_list args)
  * _print_invalid_spec - prints invalid specifier
  * @prev_format: previous specifier of original specifier
  * @format: spec to prints
- * @count: current count before invalid spec print
+ * @c: current count before invalid spec print
  *
  * Return: current count after invalid spec print
  */
