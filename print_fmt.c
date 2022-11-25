@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdarg.h>
 
 /**
  * _print_format - prints format
@@ -31,7 +32,7 @@ int _print_format(const char *format, va_list args)
 
 			if (_validate_char(format[i]) == 0)
 			{
-				c = _print_invaliid_spec(format[i - 1], format[i], c);
+				c = _print_invalid_spec(format[i - 1], format[i], c);
 			}
 
 			else
@@ -67,15 +68,15 @@ int _print_spec(char format, va_list args)
 	spc_dt _types[] = {
 		{"c", _print_a_char},
 		{"s", _print_a_string},
-		{"d", _print_an_integer},
-		{"i", _print_an_integer},
+		{"d", _print_a_integer},
+		{"i", _print_a_integer},
 		{"b", _print_int_binary},
 		{NULL, NULL}
 	};
 
-	while (_types[c].specifier)
+	while (_types[c].specifiers)
 	{
-		if (*_types[c].specifier == format)
+		if (*_types[c].specifiers == format)
 			len = _types[c].f(args);
 		c++;
 	}
