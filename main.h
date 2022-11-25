@@ -5,7 +5,7 @@
 
 /**
  * struct specifiers - struct specifiers
- * @specifier: conversion specifier
+ * @specifiers: conversion specifier
  * @f: func pointer
  */
 typedef struct specifiers
