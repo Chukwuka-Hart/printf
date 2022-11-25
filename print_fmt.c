@@ -93,22 +93,22 @@ int _print_spec(char format, va_list args)
  * Return: current count after invalid spec print
  */
 
-int _print_invalid_spec(char prev_format, char format, int count)
+int _print_invalid_spec(char prev_format, char format, int c)
 {
-	count += _write('%');
+	c += _write('%');
 
 	if (prev_format == ' ')
 	{
-		count += _write(' ');
-		count += _write(format);
+		c += _write(' ');
+		c += _write(format);
 	}
 
 	else
 	{
-		count += _write(format);
+		c += _write(format);
 	}
 
-	return (count);
+	return (c);
 }
 
 /**
